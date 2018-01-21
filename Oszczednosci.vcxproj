@@ -146,11 +146,26 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aktywa.h" />
+    <ClInclude Include="IKE.h" />
+    <ClInclude Include="JednostkaAktywow.h" />
+    <ClInclude Include="JednostkaFunduszu.h" />
+    <ClInclude Include="Kontrakt.h" />
+    <ClInclude Include="Lokata.h" />
+    <ClInclude Include="Nieruchomosc.h" />
+    <ClInclude Include="ProduktStrukturyzowany.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Oszczednosci.cpp" />
+    <ClCompile Include="IKE.cpp" />
+    <ClCompile Include="JednostkaAktywow.cpp" />
+    <ClCompile Include="JednostkaFunduszu.cpp" />
+    <ClCompile Include="Kontrakt.cpp" />
+    <ClCompile Include="Lokata.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Nieruchomosc.cpp" />
+    <ClCompile Include="ProduktStrukturyzowany.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
