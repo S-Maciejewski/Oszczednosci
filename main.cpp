@@ -20,8 +20,9 @@ int main() {
 
     cout<<ike->getIloscAktywow()<<endl;
 
-    ike->dodaj(a);
-    ike->dodaj(b);
+	*ike += a;
+	*ike += b;
+	*ike -= 1;
 
     for (int i = 0; i < ike->getIloscAktywow(); i++) {
         ike->setWartoscAktywow(ike->getWartoscAktywow() + ike->getTab()[i].getWartosc());

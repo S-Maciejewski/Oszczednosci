@@ -20,6 +20,25 @@ public:
         tab = new T[rozmiar];
     };
 
+	Aktywa& operator+=(T *jednostkaAktywow) {
+		tab[getIloscAktywow()] = *jednostkaAktywow;
+		setIloscAktywow(getIloscAktywow() + 1);
+		return *this;
+	}
+
+	Aktywa& operator-=(int numer) {
+		if (numer >= getIloscAktywow())
+			cout << "Nie znaleziono pozycji do usuniecia";
+		else if (getIloscAktywow()==1) {
+			setIloscAktywow(0);
+		} else {
+			tab[numer] = tab[getIloscAktywow() - 1];
+			setIloscAktywow(getIloscAktywow() - 1);
+		}
+
+		return *this;
+	}
+
     ~Aktywa() {
         delete &tab;
         delete &wartoscAktywow;
@@ -46,7 +65,6 @@ public:
     }
 
     void dodaj(T *jednostkaAktywow) {
-        cout << "Dodawanie " << endl;
         tab[getIloscAktywow()] = *jednostkaAktywow;
         setIloscAktywow(getIloscAktywow() + 1);
     }
