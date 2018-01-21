@@ -1,36 +1,84 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
-#include "JednostkaAktywow.h"
-#include "Lokata.h"
-#include "ProduktStrukturyzowany.h"
-#include "IKE.h"
-#include "Nieruchomosc.h"
-#include "Kontrakt.h"
-#include "JednostkaFunduszu.h"
-#include "Aktywa.h"
+//#include "JednostkaAktywow.h"
+//#include "Lokata.h"
+//#include "ProduktStrukturyzowany.h"
+//#include "IKE.h"
+//#include "Nieruchomosc.h"
+//#include "Kontrakt.h"
+//#include "JednostkaFunduszu.h"
+//#include "Aktywa.h"
+#include "Majatek.h"
 
 using namespace std;
 
+void pokazMenu() {
+	cout << "\nWybierz jedna z opcji" << endl;
+	cout << "---------Menu---------\n1. Dodaj skladnik aktywow\n2. Usun skladnik aktywow\n3. Edytuj skladnik aktywow\n4. Dodaj gotowke\n5. Odejmij gotowke" << endl;
+	cout << "6. Wyswietl wartosc majatku\n7. Przeprowadz symulacje zmiany wartosci majatku\n8. Zamknij program" << endl;
+}
+
+void dodajGotowke(double &gotowka) {
+	double ile;
+	cout << "Podaj ilosc: ";
+	cin >> ile;
+	gotowka += ile;
+	cout << "Dodano " << ile << " gotowki, aktualny stan konta to " << gotowka << endl;
+}
+
+void odejmijGotowke(double &gotowka) {
+	double ile;
+	cout << "Podaj ilosc: ";
+	cin >> ile;
+	gotowka -= ile;
+	cout << "Odebrano " << ile << " gotowki, aktualny stan konta to " << gotowka << endl;
+}
+
 int main() {
-	cout << "VS" << endl;
-    Aktywa<IKE> *ike = new Aktywa<IKE>(10);
-    IKE *a = new IKE("some ike", 100, 110, 0.01);
-    IKE *b = new IKE("some other ike", 300, 210, 0.04);
+ //   Aktywa<IKE> *ike = new Aktywa<IKE>(10);
+ //   IKE *a = new IKE("some ike", 100, 110, 0.01);
+ //   IKE *b = new IKE("some other ike", 300, 210, 0.04);
 
-    cout<<ike->getIloscAktywow()<<endl;
+ //   cout<<ike->getIloscAktywow()<<endl;
 
-	*ike += a;
-	*ike += b;
-	*ike -= 1;
+	//*ike += a;
+	//*ike += b;
+	//*ike -= 1;
 
-    for (int i = 0; i < ike->getIloscAktywow(); i++) {
-        ike->setWartoscAktywow(ike->getWartoscAktywow() + ike->getTab()[i].getWartosc());
-    }
+ //   for (int i = 0; i < ike->getIloscAktywow(); i++) {
+ //       ike->setWartoscAktywow(ike->getWartoscAktywow() + ike->getTab()[i].getWartosc());
+ //   }
 
-    cout << ike->getWartoscAktywow() << endl;
-	cout << ike->getIloscAktywow() << endl;
+ //   cout << ike->getWartoscAktywow() << endl;
+ //   cout << ike->getIloscAktywow() << endl;
+	double gotowka = 0;
+	int opcja;
+	bool dzialanie = true;
+	
+	//Majatek *majatek = new Majatek();
 
-    cout << "Program zakonczyl dzialanie" << endl;
+	cout << "Witaj w kalkulatorze oszczednosci \"Oszczedzanie jak marzenie\" - twoja satysfakcja naszym priorytetem" << endl;
+	while (1) {
+		pokazMenu();
+		cin >> opcja;
+		switch (opcja)
+		{
+		case 1: break;
+		case 2: break;
+		case 3: break;
+		case 4: dodajGotowke(gotowka); break;
+		case 5: odejmijGotowke(gotowka); break;
+		case 6: break;
+		case 7: break;
+		case 8: dzialanie = false; break;
+		default: break;
+		}
+
+		if (!dzialanie)
+			break;
+	}
+
+    cout << "\nProgram zakonczyl dzialanie" << endl;
     return 0;
 }

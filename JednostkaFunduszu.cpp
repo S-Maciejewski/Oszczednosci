@@ -9,7 +9,8 @@ JednostkaFunduszu::JednostkaFunduszu(string nazwa, double wartosc, double wklad,
         : JednostkaAktywow(nazwa, wartosc, wklad,
                            roi) {
     setDywidenda(roi);
-};
+}
+JednostkaFunduszu::JednostkaFunduszu() {};
 
 // Dziedziczenie destruktora : ~JednostkaAktywow() {} nie działa?
 JednostkaFunduszu::~JednostkaFunduszu() = default;

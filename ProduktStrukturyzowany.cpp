@@ -6,7 +6,8 @@ using namespace std;
 
 ProduktStrukturyzowany::ProduktStrukturyzowany(string nazwa, double wartosc, double wklad, double roi)
         : JednostkaAktywow(nazwa, wartosc, wklad,
-                           roi) {};
+                           roi) {}
+ProduktStrukturyzowany::ProduktStrukturyzowany() {};
 
 // Dziedziczenie destruktora : ~JednostkaAktywow() {} nie działa?
 ProduktStrukturyzowany::~ProduktStrukturyzowany() = default;

@@ -9,8 +9,8 @@ Kontrakt::Kontrakt(string nazwa, double wartosc, double wklad, double roi, doubl
         nazwa, wartosc, wklad,
         roi) {
     setOkresTrwania(okresTrwania);
-};
-
+}
+Kontrakt::Kontrakt() {};
 // Dziedziczenie destruktora : ~JednostkaAktywow() {} nie działa?
 Kontrakt::~Kontrakt() = default;
 

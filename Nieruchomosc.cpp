@@ -8,7 +8,8 @@ Nieruchomosc::Nieruchomosc(string nazwa, double wartosc, double wklad, double ro
                                                                                                       wklad,
                                                                                                       roi) {
     setPrzychodRoczny(wklad * roi);
-};
+}
+Nieruchomosc::Nieruchomosc() {};
 
 // Dziedziczenie destruktora : ~JednostkaAktywow() {} nie działa?
 Nieruchomosc::~Nieruchomosc() = default;

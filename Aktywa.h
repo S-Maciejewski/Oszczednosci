@@ -1,6 +1,3 @@
-//#ifndef KALKULATOROSZCZEDNOSCI_AKTYWA_H
-//#define KALKULATOROSZCZEDNOSCI_AKTYWA_H
-//#endif KALKULATOROSZCZEDNOSCI_AKTYWA_H
 #include "stdafx.h"
 #include <vector>
 

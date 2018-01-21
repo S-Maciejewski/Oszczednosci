@@ -152,6 +152,7 @@
     <ClInclude Include="JednostkaFunduszu.h" />
     <ClInclude Include="Kontrakt.h" />
     <ClInclude Include="Lokata.h" />
+    <ClInclude Include="Majatek.h" />
     <ClInclude Include="Nieruchomosc.h" />
     <ClInclude Include="ProduktStrukturyzowany.h" />
     <ClInclude Include="stdafx.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Kontrakt.cpp" />
     <ClCompile Include="Lokata.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Majatek.cpp" />
     <ClCompile Include="Nieruchomosc.cpp" />
     <ClCompile Include="ProduktStrukturyzowany.cpp" />
     <ClCompile Include="stdafx.cpp">

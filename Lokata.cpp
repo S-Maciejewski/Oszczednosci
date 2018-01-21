@@ -4,7 +4,8 @@
 using namespace std;
 
 Lokata::Lokata(string nazwa, double wartosc, double wklad, double roi) : JednostkaAktywow(nazwa, wartosc, wklad,
-                                                                                          roi) {};
+                                                                                          roi) {}
+Lokata::Lokata() {};
 
 // Dziedziczenie destruktora : ~JednostkaAktywow() {} nie działa?
 Lokata::~Lokata() = default;

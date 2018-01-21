@@ -1,6 +1,3 @@
-//#ifndef KALKULATOROSZCZEDNOSCI_NIERUCHOMOSC_H
-//#define KALKULATOROSZCZEDNOSCI_NIERUCHOMOSC_H
-//#endif KALKULATOROSZCZEDNOSCI_NIERUCHOMOSC_H
 #include "stdafx.h"
 #include "JednostkaAktywow.h"
 #include <string>
@@ -14,6 +11,8 @@ private:
 
 public:
     Nieruchomosc(string nazwa, double wartosc, double wklad, double roi);
+
+	Nieruchomosc();
 
     ~Nieruchomosc();
 
