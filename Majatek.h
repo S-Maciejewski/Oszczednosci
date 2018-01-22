@@ -11,16 +11,20 @@
 #include "Aktywa.h"
 
 using namespace std;
-//TODO Dodawanie elementów aktywów (nazwa, wk³ad, roi)
+
 class Majatek {
 private:
-    Aktywa<Lokata> *lokaty;
-    Aktywa<ProduktStrukturyzowany> *produkty;
-    Aktywa<IKE> *iki;
-    Aktywa<Nieruchomosc> *nieruchomosci;
-    Aktywa<Kontrakt> *kontrakty;
-    Aktywa<JednostkaFunduszu> *jednostkiFunduszu;
+	Aktywa<Lokata> *lokaty;
+	Aktywa<ProduktStrukturyzowany> *produkty;
+	Aktywa<IKE> *iki;
+	Aktywa<Nieruchomosc> *nieruchomosci;
+	Aktywa<Kontrakt> *kontrakty;
+	Aktywa<JednostkaFunduszu> *jednostkiFunduszu;
 	int maxElementow = 10;	//Wiêcej elementów dostêpnych jest w wersji "Oszczedzanie jak marzenie - Deluxe Premium Platinum"
+
+	string podajNazwe();
+
+	double podajWartosc();
 public:
     Majatek();
 

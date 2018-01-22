@@ -7,6 +7,7 @@ template<class T>
 class Aktywa {
 private:
     T *tab;
+	//T **tab;
     double wartoscAktywow;
     int iloscAktywow;
 
@@ -14,7 +15,8 @@ public:
     Aktywa(int rozmiar) {
         wartoscAktywow = 0;
         iloscAktywow = 0;
-        tab = new T[rozmiar];
+        //tab = new T*[rozmiar];
+		tab = new T[rozmiar];
     };
 
 	Aktywa& operator+=(T *jednostkaAktywow) {
@@ -41,9 +43,13 @@ public:
         delete &wartoscAktywow;
     };
 
-    T *getTab() const {
-        return tab;
-    }
+	T *getTab() {
+		return tab;
+	}
+
+    //T **getTab(){
+    //    return tab;
+    //}
 
     int getIloscAktywow() const {
         return iloscAktywow;
@@ -62,7 +68,8 @@ public:
     }
 
     void dodaj(T *jednostkaAktywow) {
-        tab[getIloscAktywow()] = *jednostkaAktywow;
+        //tab[getIloscAktywow()] = jednostkaAktywow;
+		getTab()[getIloscAktywow()] = *jednostkaAktywow;
         setIloscAktywow(getIloscAktywow() + 1);
     }
 
