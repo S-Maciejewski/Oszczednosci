@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 //#include "JednostkaAktywow.h"
 //#include "Lokata.h"
 //#include "ProduktStrukturyzowany.h"
@@ -16,7 +17,7 @@ using namespace std;
 void pokazMenu() {
 	cout << "\nWybierz jedna z opcji" << endl;
 	cout << "---------Menu---------\n1. Dodaj skladnik aktywow\n2. Usun skladnik aktywow\n3. Edytuj skladnik aktywow\n4. Dodaj gotowke\n5. Odejmij gotowke" << endl;
-	cout << "6. Wyswietl szczegoly wartosci majatku\n7. Przeprowadz symulacje zmiany wartosci majatku\n8. Zamknij program" << endl;
+	cout << "6. Wyswietl szczegoly wartosci majatku\n7. Przeprowadz symulacje zmiany wartosci majatku\n8. Zapisz manualnie\n9. Zamknij program" << endl;
 }
 
 void dodajGotowke(double &gotowka) {
@@ -37,6 +38,20 @@ void odejmijGotowke(double &gotowka) {
 
 void wypiszGotowke(double &gotowka) {
 	cout << "Twoja gotowka to: " << gotowka << endl;
+}
+
+void zapiszDoPliku(Majatek *majatek, double &gotowka) {
+	ofstream out("zapis.txt");
+	out << gotowka << endl;
+	majatek->zapis(out);
+	out.close();
+}
+
+void odczytajZPliku(Majatek *majatek, double &gotowka) {
+	ifstream in("zapis.txt");
+	in >> gotowka;
+	majatek->odczyt(in);
+	in.close();
 }
 
 int main() {
@@ -62,20 +77,22 @@ int main() {
 	
 	Majatek *majatek = new Majatek();
 
+	odczytajZPliku(majatek, gotowka);
 	cout << "Witaj w kalkulatorze oszczednosci \"Oszczedzanie jak marzenie\" - twoja satysfakcja naszym priorytetem" << endl;
 	while (1) {
 		pokazMenu();
 		cin >> opcja;
 		switch (opcja)
 		{
-		case 1: majatek->dodajAktywa(); break;
-		case 2: break;
-		case 3: break;
-		case 4: dodajGotowke(gotowka); break;
-		case 5: odejmijGotowke(gotowka); break;
+		case 1: majatek->dodajAktywa(); zapiszDoPliku(majatek, gotowka); break;
+		case 2: majatek->usunAktywa(); zapiszDoPliku(majatek, gotowka); break;
+		case 3: majatek->edytujAktywa(); zapiszDoPliku(majatek, gotowka); break;
+		case 4: dodajGotowke(gotowka); zapiszDoPliku(majatek, gotowka); break;
+		case 5: odejmijGotowke(gotowka); zapiszDoPliku(majatek, gotowka); break;
 		case 6: wypiszGotowke(gotowka); majatek->wypiszAktywa(); break;
-		case 7: break;
-		case 8: dzialanie = false; break;
+		case 7: majatek->przeprowadzSymulacje(); break;
+		case 8: zapiszDoPliku(majatek, gotowka); break;
+		case 9: dzialanie = false; break;
 		default: break;
 		}
 

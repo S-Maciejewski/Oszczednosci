@@ -22,15 +22,16 @@ private:
 	Aktywa<JednostkaFunduszu> *jednostkiFunduszu;
 	int maxElementow = 10;	//Wiêcej elementów dostêpnych jest w wersji "Oszczedzanie jak marzenie - Deluxe Premium Platinum"
 
-	string podajNazwe();
-
-	double podajWartosc();
 public:
     Majatek();
 
     ~Majatek();
 
-    double obliczWartoscMajatku();
+	static string podajNazwe();
+
+	static double podajWartosc();
+
+    double obliczWartoscMajatku(int ileLat);
 
     void dodajAktywa();
 
@@ -41,4 +42,8 @@ public:
     void wypiszAktywa();
 
     void przeprowadzSymulacje();
+
+	void zapis(ofstream &out);
+
+	void odczyt(ifstream &in);
 };

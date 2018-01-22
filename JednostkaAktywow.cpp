@@ -22,6 +22,10 @@ JednostkaAktywow::~JednostkaAktywow() {
 
 string JednostkaAktywow::getNazwa() { return nazwa; }
 
+void JednostkaAktywow::setNazwa(string nazwa){
+	this->nazwa = nazwa;
+}
+
 double JednostkaAktywow::getWartosc(){
     return wartosc;
 }
@@ -36,4 +40,8 @@ double JednostkaAktywow::getWklad() {
 
 double JednostkaAktywow::getRoi() {
     return roi;
+}
+
+void JednostkaAktywow::setRoi(double roi){
+	this->roi = roi;
 }

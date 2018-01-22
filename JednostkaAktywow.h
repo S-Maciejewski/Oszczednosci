@@ -20,13 +20,17 @@ public:
 
     string getNazwa();
 
-    double getWartosc();
+	void setNazwa(string nazwa);
+
+	double getWartosc();
 
     double getWklad();
 
     void setWartosc(double wartosc);
 
     double getRoi();
+
+	void setRoi(double roi);
 
     virtual void obliczZmianeWartosci(int ileLat) = 0;
 
