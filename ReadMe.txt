@@ -1,1 +1,3 @@
-Projekt z C++ na PO, Sebastian Maciejewski, nr indeksu 132 275, grupa poniedzia�kowa, 9:45
+Projekt z Programowania Obiektowego na 3. semestrze Informatyki, WI, PP.
+
+Celem projektu było napisanie aplikacji konsolowej w C++ służącej do ewidencji oszczędności przy zastosowaniu obiektowego paradygmatu programowania.
